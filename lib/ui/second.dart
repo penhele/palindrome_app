@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../utils/constants/sizes.dart';
-import 'third.dart';
+import 'user/user.dart';
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key, required this.userName});

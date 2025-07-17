@@ -13,7 +13,7 @@ class ApiService {
     if (response.statusCode == 200) {
       return UserResponse.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception("Failed to load user list");
+      throw Exception("Failed to load user list: ${response.statusCode}");
     }
   }
 }

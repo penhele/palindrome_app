@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
-// import 'navigation_menu.dart';
+import 'data/api/api_service.dart';
+import 'provider/user_list_provider.dart';
 import 'ui/home/home.dart';
 import 'utils/constants/theme/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserListProvider(ApiService())),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
