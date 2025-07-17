@@ -5,9 +5,11 @@ import 'package:provider/provider.dart';
 import 'data/api/api_service.dart';
 import 'provider/user_list_provider.dart';
 import 'ui/home/home.dart';
+import 'ui/user/user_controller.dart';
 import 'utils/constants/theme/theme.dart';
 
 void main() {
+  Get.put(UserController());
   runApp(
     MultiProvider(
       providers: [

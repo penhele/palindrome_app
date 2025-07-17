@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/user_list_provider.dart';
 import '../../static/user_list_result_state.dart';
+import 'user_controller.dart';
 import 'widget/user_card.dart';
 import 'widget/user_error.dart';
 
-class ThirdScreen extends StatefulWidget {
-  const ThirdScreen({super.key});
+class UserScreen extends StatefulWidget {
+  const UserScreen({super.key});
 
   @override
-  State<ThirdScreen> createState() => _ThirdScreenState();
+  State<UserScreen> createState() => _UserScreenState();
 }
 
-class _ThirdScreenState extends State<ThirdScreen> {
+class _UserScreenState extends State<UserScreen> {
   void _fetchUserList() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<UserListProvider>().fetchUserList();
@@ -28,6 +30,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<UserController>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -47,16 +51,25 @@ class _ThirdScreenState extends State<ThirdScreen> {
               itemCount: userList.length,
               itemBuilder: (context, index) {
                 final user = userList[index];
-                return Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  child: UserCard(
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    avatar: user.avatar,
+
+                return InkWell(
+                  onTap: () {
+                    controller.setSelectedUser(
+                      '${user.firstName} ${user.lastName}',
+                    );
+                    Get.back();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
+                    ),
+                    child: UserCard(
+                      firstName: user.firstName,
+                      lastName: user.lastName,
+                      email: user.email,
+                      avatar: user.avatar,
+                    ),
                   ),
                 );
               },

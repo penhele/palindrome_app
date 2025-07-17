@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../utils/constants/sizes.dart';
-import '../second.dart';
+import '../welcome/welcome.dart';
 import 'home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -82,7 +82,9 @@ class HomeScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      Get.to(() => SecondScreen(userName: controller.userName));
+                      Get.to(
+                        () => WelcomeScreen(userName: controller.userName),
+                      );
                     }
                   },
                   child: const Text('NEXT'),
