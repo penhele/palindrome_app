@@ -28,16 +28,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LocalizationProvider>(context);
-
-    return GetMaterialApp(
-      themeMode: ThemeMode.system,
-      theme: SAppTheme.lightTheme,
-      darkTheme: SAppTheme.darkTheme,
-      locale: provider.locale,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomeScreen(),
+    return Consumer<LocalizationProvider>(
+      builder: (context, provider, _) {
+        return GetMaterialApp(
+          themeMode: ThemeMode.system,
+          theme: SAppTheme.lightTheme,
+          darkTheme: SAppTheme.darkTheme,
+          locale: provider.locale,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const HomeScreen(),
+        );
+      },
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class LocalizationProvider extends ChangeNotifier {
   Locale _locale = const Locale("en");

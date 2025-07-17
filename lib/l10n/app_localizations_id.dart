@@ -9,9 +9,6 @@ class AppLocalizationsId extends AppLocalizations {
   AppLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
-  String get titleApp => 'Aplikasi Lokalisasi';
-
-  @override
   String get name => 'Nama';
 
   @override

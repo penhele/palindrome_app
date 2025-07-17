@@ -1,8 +1,5 @@
 {
-  "titleApp": "Aplikasi Lokalisasi",
-  "@titleApp": {
-    "description": "Deskripsi mengenai variabel titleApp"
-  },
+  "@@locale": "id",
   "name": "Nama",
   "palindrome": "Palindrom",
   "nameRequired": "Nama tidak boleh kosong",

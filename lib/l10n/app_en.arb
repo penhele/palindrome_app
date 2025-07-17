@@ -1,5 +1,5 @@
 {
-  "titleApp": "Localization App",
+  "@@locale": "en",
   "name": "Name",
   "palindrome": "Palindrome",
   "nameRequired": "Name must not be empty",

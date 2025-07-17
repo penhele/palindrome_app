@@ -98,12 +98,6 @@ abstract class AppLocalizations {
     Locale('id'),
   ];
 
-  /// Deskripsi mengenai variabel titleApp
-  ///
-  /// In id, this message translates to:
-  /// **'Aplikasi Lokalisasi'**
-  String get titleApp;
-
   /// No description provided for @name.
   ///
   /// In id, this message translates to:
