@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:palindrome_app/utils/constants/theme/costum_themes/text_theme.dart';
 
+import '../colors.dart';
+import 'costum_themes/appbar_theme.dart';
 import 'costum_themes/elevated_button_theme.dart';
 import 'costum_themes/text_field_theme.dart';
+import 'costum_themes/text_theme.dart';
 
 class SAppTheme {
   SAppTheme._();
@@ -11,6 +13,8 @@ class SAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.light,
+    scaffoldBackgroundColor: SColors.light,
+    appBarTheme: SAppBarTheme.lightAppBarTheme,
     textTheme: STextTheme.lightTextTheme,
     elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: STextFormFieldTheme.lightInputDecorationTheme,
@@ -20,6 +24,8 @@ class SAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.dark,
+    scaffoldBackgroundColor: SColors.backgroundDark,
+    appBarTheme: SAppBarTheme.darkAppBarTheme,
     textTheme: STextTheme.darkTextTheme,
     elevatedButtonTheme: SElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: STextFormFieldTheme.darkInputDecorationTheme,

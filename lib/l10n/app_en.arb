@@ -1,0 +1,22 @@
+{
+  "titleApp": "Localization App",
+  "name": "Name",
+  "palindrome": "Palindrome",
+  "nameRequired": "Name must not be empty",
+  "palindromeRequired": "Palindrome must not be empty",
+  "check": "CHECK",
+  "next": "NEXT",
+  "welcome": "Welcome",
+  "noUserSelected": "No user selected",
+  "chooseUser": "Choose a User",
+  "emptyData": "Empty data",
+  "failedToLoadData": "Failed to load data",
+  "checkYourConnection": "Check your connection!",
+  "retry": "Retry", 
+  "firstScreen": "First Screen",
+  "secondScreen": "Second Screen",
+  "thirdScreen": "Third Screen",
+  "palindromeCheck": "Palindrome Check",
+  "isPalindrome": "isPalindrome",
+  "notPalindrome": "not palindrome"
+}

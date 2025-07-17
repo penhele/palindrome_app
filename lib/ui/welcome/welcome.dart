@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:palindrome_app/data/classes/common.dart';
 
 import '../../utils/constants/sizes.dart';
 import '../user/user.dart';
@@ -23,14 +24,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Second Screen',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
+        title: Text(AppLocalizations.of(context)!.secondScreen),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(SSizes.defaultPadding),
+        padding: const EdgeInsets.symmetric(
+          horizontal: SSizes.defaultPadding,
+          vertical: SSizes.paddingLarge,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,7 +39,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Welcome,', style: Theme.of(context).textTheme.bodyMedium),
+                Text(
+                  '${AppLocalizations.of(context)!.welcome},',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
                 Text(
                   widget.userName.length > 1
                       ? widget.userName[0].toUpperCase() +
@@ -54,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 () => Text(
                   controller.selectedUserName.value.isNotEmpty
                       ? controller.selectedUserName.value
-                      : 'No user selected',
+                      : AppLocalizations.of(context)!.noUserSelected,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
@@ -64,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.to(() => const UserScreen()),
-                child: const Text('Choose a User'),
+                child: Text(AppLocalizations.of(context)!.chooseUser),
               ),
             ),
           ],

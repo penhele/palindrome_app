@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import 'data/api/api_service.dart';
+import 'data/classes/common.dart';
+import 'provider/localizations_provider.dart';
 import 'provider/user_list_provider.dart';
 import 'ui/home/home.dart';
 import 'ui/user/user_controller.dart';
@@ -13,6 +15,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => LocalizationProvider()),
         ChangeNotifierProvider(create: (_) => UserListProvider(ApiService())),
       ],
       child: const MyApp(),
@@ -25,10 +28,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LocalizationProvider>(context);
+
     return GetMaterialApp(
       themeMode: ThemeMode.system,
       theme: SAppTheme.lightTheme,
       darkTheme: SAppTheme.darkTheme,
+      locale: provider.locale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const HomeScreen(),
     );
   }

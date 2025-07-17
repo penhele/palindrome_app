@@ -1,0 +1,25 @@
+{
+  "titleApp": "Aplikasi Lokalisasi",
+  "@titleApp": {
+    "description": "Deskripsi mengenai variabel titleApp"
+  },
+  "name": "Nama",
+  "palindrome": "Palindrom",
+  "nameRequired": "Nama tidak boleh kosong",
+  "palindromeRequired": "Palindrom tidak boleh kosong",
+  "check": "PERIKSA",
+  "next": "BERIKUTNYA",
+  "welcome": "Selamat datang",
+  "noUserSelected": "Belum ada pengguna yang dipilih",
+  "chooseUser": "Pilih Pengguna",
+  "emptyData": "Data kosong",
+  "failedToLoadData": "Gagal memuat data",
+  "checkYourConnection": "Periksa koneksi Anda!",
+  "retry": "Coba Lagi",
+  "firstScreen": "Layar Pertama",
+  "secondScreen": "Layar Kedua",
+  "thirdScreen": "Layar Ketiga",
+  "palindromeCheck": "Pemeriksaan Palindrom",
+  "isPalindrome": "isPalindrome",
+  "notPalindrome": "Bukan palindrom"
+}
