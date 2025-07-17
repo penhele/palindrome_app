@@ -9,7 +9,6 @@ class HomeController extends GetxController {
   final palindromeController = TextEditingController();
 
   void checkPalindrome(BuildContext context) {
-    FocusScope.of(context).unfocus();
     final result = SStringHelper.isPalindrome(palindromeController.text);
 
     Future.delayed(const Duration(milliseconds: 100), () {

@@ -13,11 +13,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(SSizes.defaultPadding),
+      body: Padding(
+        padding: const EdgeInsets.all(SSizes.defaultPadding),
+        child: Form(
+          key: formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,6 +40,12 @@ class HomeScreen extends StatelessWidget {
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: 'Name',
                 ),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "Name tidak boleh kosong";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: SSizes.spaceBtwItems),
 
@@ -47,13 +55,23 @@ class HomeScreen extends StatelessWidget {
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: 'Palindrome',
                 ),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "Palindrome tidak boleh kosong";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: SSizes.spaceBtwSection),
 
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => controller.checkPalindrome(context),
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      controller.checkPalindrome(context);
+                    }
+                  },
                   child: const Text('CHECK'),
                 ),
               ),
@@ -62,7 +80,11 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => const SecondScreen()),
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      Get.to(() => SecondScreen(userName: controller.userName));
+                    }
+                  },
                   child: const Text('NEXT'),
                 ),
               ),

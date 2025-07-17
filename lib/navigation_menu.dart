@@ -38,7 +38,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const SecondScreen(),
+    // const SecondScreen(),
     const ThirdScreen(),
   ];
 }
