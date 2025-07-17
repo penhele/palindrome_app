@@ -3,14 +3,17 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 
-import '../utils/constants/sizes.dart';
-import 'second.dart';
+import '../../utils/constants/sizes.dart';
+import '../second.dart';
+import 'home_controller.dart';
 
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(HomeController());
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -30,6 +33,7 @@ class FirstScreen extends StatelessWidget {
               const SizedBox(height: SSizes.spaceBtwSection),
 
               TextFormField(
+                controller: controller.nameController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: 'Name',
@@ -38,6 +42,7 @@ class FirstScreen extends StatelessWidget {
               const SizedBox(height: SSizes.spaceBtwItems),
 
               TextFormField(
+                controller: controller.palindromeController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: 'Palindrome',
@@ -48,7 +53,7 @@ class FirstScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => controller.checkPalindrome(context),
                   child: const Text('CHECK'),
                 ),
               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'ui/first.dart';
+import 'ui/home/home.dart';
 import 'ui/second.dart';
 import 'ui/third.dart';
 
@@ -37,7 +37,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    const FirstScreen(),
+    const HomeScreen(),
     const SecondScreen(),
     const ThirdScreen(),
   ];

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'navigation_menu.dart';
+// import 'navigation_menu.dart';
+import 'ui/home/home.dart';
 import 'utils/constants/theme/theme.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SAppTheme.lightTheme,
       darkTheme: SAppTheme.darkTheme,
-      home: const NavigationMenu(),
+      home: const HomeScreen(),
     );
   }
 }
